@@ -1,0 +1,10 @@
+--- thunar-folder.c	2015-05-22 16:25:36.000000000 +0300
++++ thunar-folder-fixed.c	2016-02-01 03:02:46.304395712 +0300
+@@ -569,7 +569,7 @@
+ 
+   /* add us to the file alteration monitor */
+   folder->monitor = g_file_monitor_directory (thunar_file_get_file (folder->corresponding_file),
+-                                              G_FILE_MONITOR_SEND_MOVED, NULL, NULL);
++                                              G_FILE_MONITOR_NONE, NULL, NULL);
+   if (G_LIKELY (folder->monitor != NULL))
+     g_signal_connect (folder->monitor, "changed", G_CALLBACK (thunar_folder_monitor), folder);
